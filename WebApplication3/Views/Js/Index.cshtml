@@ -1,0 +1,78 @@
+﻿@*@{
+        ViewData["Title"] = "Index";
+    }
+
+    <h2>Index</h2>
+
+    <div>
+        <span>Number</span>
+        </br>
+        <input type="number" id="txtNumber" />
+        </br>
+        <button id="btnRoot">SquareRoot</button>
+        </br>
+        <span id="result"></span>
+    </div>
+    @section Scripts
+        {
+        <script>
+            var button = document.getElementById("btnRoot");
+            button.onclick = buttonClick;
+            function buttonClick() {
+                var txt = document.getElementById("txtNumber");
+                var number = parseInt(txt.value);
+                var root = Math.sqrt(number);
+
+                var result = document.getElementById("result");
+                result.innerText = "Root is:" + root;
+                alert("hey beauriflu");
+            }
+        </script>
+    }*@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Index</h2>
+<div>
+    <span>Number</span>
+    <br />
+    <input type="number" id="txtNumber" />
+    <br />
+    <button id="btnRoot">Square Root</button>
+    <br />
+    <span id="result"></span>
+</div>
+<button onclick="CheckLeap()">Leap</button>
+
+
+
+@section Scripts
+    {
+    <script src="~/js/myscript.js"></script>
+        <script>
+        var button = document.getElementById("btnRoot");
+        button.onclick = buttonClick;
+        function buttonClick() {
+            var txt = document.getElementById("txtNumber");
+            var number = parseInt(txt.value);
+            var root = Math.sqrt(number);
+
+            var result = document.getElementById("result");
+            result.innerText = "Root is: " + root;
+        }
+        function CheckLeap() {
+            var year = prompt("enter the year", 0);
+            year = parseInt(year);
+            var result = leap(year);
+            if (result == true) {
+                alert("year is leap");
+            }
+            else
+                alert("year is not a hjhjh");
+        }
+
+            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    </script>
+
+}

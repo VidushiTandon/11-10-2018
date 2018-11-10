@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Objects";
+}
+
+<h2>Objects</h2>
+
+<script>
+    var date = new Date();
+
+    document.write(date.toString());
+    document.write("<br />" + date.getDate());
+    document.write("<br />" + date.getMonth());
+    document.write("<br />" + date.getFullYear());
+    document.write("<br />" + date.getHours());
+    document.write("<br />" + date.getMinutes());
+    document.write("<br />" + date.getSeconds());
+    document.write("<br />" + date.getMilliseconds());
+
+    var d1 = new Date(2018, 10, 25);
+    var d2 = new Date(2018, 10, 20);
+    if (d1 > d2) alert('yes');
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+
+    function CustomObjects() {
+        var obj = new Object();
+        obj.code = 21;
+        obj.price = 2500;
+        obj.title = "C# Book";
+        obj.Display = function () {
+            alert(this.code + ' ' + this.price + ' ' + this.title);
+        }
+        obj.Display();
+        var newObj = {
+            code: 21, title: 'MVC', price: 240, Display: function () {
+                return (this.code + ' ' + this.price + ' ' + this.title)
+            }
+        };
+        var result = newObj.Display();
+        document.write("<br/>" + result);
+    }
+    CustomObjects();
+
+</script>
